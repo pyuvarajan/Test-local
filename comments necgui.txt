@@ -1,0 +1,6 @@
+1. Node Group 2 Label 
+2. Change Select Background Image to Upload Image
+3. Node List - Add Default
+4. Node icon
+Node type
+Generic       Preset is dropdown with image   Upload image Delete 
