@@ -44,4 +44,33 @@ A member can be a part of issue triage team, where he/she can join the community
 A member can contribute technical documentation as well. He/She can own up the Config guide, CLI  guide, use-cases documentation, deployment scenarios documentation, for the ongoing feature or the existing feture which needs an enhancement. The documentation would be reviewed with the community member to be published in the SONiC community.
 
 
+## 1.3 Process on Contribution
+This section gives a detailed description on adhering the process for contributing to the community. 
 
+##### 1.3.1 Process on Code Development
+As mentioned in previous section, a member should inform the community about ownership of his/her feature development/enhancement and ensure that the feature is added to roadmap. He/She has to pull a seperate private branch from the master branch in the corresponding community repository in order to develop their code.The High level design document should always be in markdown file format. Plan the workflow & provide a schedule for release to the community members. The plan should include requirements, design, design review with community, code & test, code review by community & PR merge, final testing, test-cases if applicable, CLI document update, config document update. This plan should be reviewed and approved by community members before for the development/enhancement of owned feature. He/She should execute as per the plan and schedule community reviews in advance. He/She should ensure that the feature HLD review is completed and  HLD reveiw comments are addressed and merge the Pull Request(explained in below section). He/She should ensure that code checkin and Pull Request has been raised for the feature. And ensure code is reviewed by the community and merged as per the planned release.
+
+##### 1.3.2 Process on Repositories
+As mentioned earlier, a seperate private branch has to be pulled from master branch in an appropriate repository. There are various code repository available such as sonic-buildimage, sonic-utilities, sonic-swss, sonic-build-system etc. He/She should ensure that the owned feature is updated in  the right repository to add the development code.
+
+##### 1.3.3 Process on Release Cycle
+The community will follow the roadmap for release and would be updated periodically. The release tracking will be followed for all the ongoing feature for the release and its corresponding HLD discussion will be happening every week. A member should ensure that he/she actively involves his/her self in the discussion. The release tracking sheet should be updated periodically to ensure the status of release happening. Release notes will be issued upon successful release for the completed features. 
+
+##### 1.3.3 Process on Pull Request
+Find below the steps to raise a Pull Request for the HLD document as well as for the development Code.
+	-Fork the corresponding repository for the owned feature
+	-Clone your repository 
+	-Create a private branch for updating the HLD and code development.
+	-Do necessary changes upon review comments if any
+	-Push the HLD document code development 
+	-And raise a new pull request.
+Find the below example on raising a pull request
+
+```
+git clone https://github.com/kannankvs/sonic-buildimage.git	 	 
+git clone https://github.com/kannankvs/sonic-utilities.git	 	 
+git clone https://github.com/vharish02/sonic-utilities.git	 	 
+git checkout -b mvrf_ip_rule_priority_change_to_32765	git checkout mvrf_ip_rule_priority_change_to_32765	 
+git push origin mvrf_ip_rule_priority_change_to_32765	 	 
+
+```
