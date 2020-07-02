@@ -16,11 +16,10 @@ This document describes the scope of a SONiC Community member, and his/her contr
  A member can contribute the community by signing in Github and can access the SONiC contribution. A member can join the various SONiC groups
  and can start attending actively over the weekly discssion on the ongoing activities. Follwoing our the way of contributions and its process to the community
  
- ### 1.2 Technical Contribution
- ### 1.3 Process on Contribution
- ### 1.4 Process on Pull Request
-
-
+ #### 1.2 Technical Contribution
+ #### 1.3 Process on Contribution
+ #### 1.4 Process on Pull Request
+	
 ## 1.2 Technical Contribution
  A member can involve in following technical contribution to SONiC community
 ##### 1.2.1 Development
