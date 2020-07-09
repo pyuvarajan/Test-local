@@ -66,6 +66,16 @@ Code phase activities are,
 9. Code PR review and merging should be completed by last month of the release. For example the PR merge for 202012 release, should be completed by Dec2020. 
 10. Config commands and show commands pertaining to the feature should be mentioned in the Azure/SONiC repository within the appropriate folder.
 
+``` 
+Example Feature : Dynamic Port Breakout - developed for 202006 release
+
+a) Code PRs :	https://github.com/Azure/sonic-swss/pull/1242
+				https://github.com/Azure/sonic-buildimage/pull/3910
+				https://github.com/Azure/sonic-utilities/pull/765
+				https://github.com/Azure/sonic-platform-common/pull/72
+				
+```
+
 ## Release
 1. With completion of all the activities for the feature, a [branch](https://github.com/Azure/sonic-buildimage/tree/202006) will be pulled out on the last day of the release. For example branch pull for the 202012 release, will happen on 31st Dec 2020.
 2. Image stabilization shall happen for 1 or 2 months after branching. 
