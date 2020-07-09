@@ -39,3 +39,11 @@ b) [Design Review meeting plan](https://groups.google.com/forum/#!msg/sonicproje
 c) [Design review completion and minutes](https://groups.google.com/d/msg/sonicproject/kST4pB3k-Hw/c-cL03PhAwAJ)<br>
 d) [Merged design document](https://github.com/Azure/SONiC/blob/master/doc/dynamic-port-breakout/sonic-dynamic-port-breakout-HLD.md)
 
+### 1.1.3 Coding & Testing 
+The next phase is Coding the feature. Code the the feature and raise a Pull request for code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  For example, for 202012 release, code PR should have been raised latest by Nov2020.
+
+Code PR review and merging should be completed by last month of the release. For example, for 202012 release, PR should have been merged by Dec2020. Periodic updates has to be given to the [Release Progress Tracking](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202006) sheet. All PR’s related to feature should be label/Tag in the PR in order to track the same.
+
+
+### 1.1.4 Release
+A branch(need link) will be pulled out on the last day of the release. For example, for 202012 release, branch will be pulled out on 31st Dec 2020. Image stabilization shall happen for 1 or 2 months after branching
