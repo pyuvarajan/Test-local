@@ -22,7 +22,7 @@ Various stages of a release include the following.
 ##### 1.1.3 Coding & Testing  
 ##### 1.1.4 Release  
 
-![](https://github.com/pyuvarajan/Test-local/blob/master/ReleaseTrain_updated.svg)
+![](https://github.com/pyuvarajan/Test-local/blob/master/release_train_png.png)
 
 ### 1.1.1 Planning 
 Plan the feature/enhancement for a particular release train and inform community to add it to the roadmap. Members should inform community about feature set within a month after previous release. Provide an update to community with the plan with specific requests for HLD review dates and probable code review dates. Identify, discuss and finalize reviewer for the feature and get an assigned reviewer for the feature. 
