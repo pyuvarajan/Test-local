@@ -30,7 +30,7 @@ Plan the feature/enhancement for a particular release train and inform community
 For example : For 202012 release commitment should be given latest by July2020 and HLD and code reviewer should be assigned latest by Aug2020.
 
 ### 1.1.2 Design
-The next phase after the planning would be a design phase for the feature. Prepare the HLD documet in markdown format, and raise Pull Request(PR) in the azure/SONiC repository in their appropriate feature folder (create a new folder if there isn't a existing one) "[example](https://github.com/Azure/SONiC/tree/master/doc)" and send it to community for review. Once a design is done, request for design review, and get it reviewed in community meeting. Address the review comments if any and ensure that HLD is merged. Design for the feature should be completed before fourth month of a release. 
+The next phase after the planning would be a design phase for the feature. Prepare the HLD documet in markdown format, and raise Pull Request(PR) in the azure/SONiC repository in their appropriate feature folder (create a new folder if there isn't a existing one) [[example](https://github.com/Azure/SONiC/tree/master/doc)] and send it to community for review. Once a design is done, request for design review, and get it reviewed in the community meeting. Address the review comments if any, and ensure that HLD is merged. Design for the feature should be completed before fourth month of a release. 
 
 For example : For 202012 release design PR should be merged latest by Oct2020.
 
@@ -42,7 +42,7 @@ c) [Design review completion and minutes](https://groups.google.com/d/msg/sonicp
 d) [Merged design document](https://github.com/Azure/SONiC/blob/master/doc/dynamic-port-breakout/sonic-dynamic-port-breakout-HLD.md)
 
 ### 1.1.3 Coding & Testing 
-The next phase is Coding the feature. Code the the feature and raise a Pull request for code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  
+The next phase is Coding the feature. Code the feature and raise a Pull request for the code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  
 
 For example : For 202012 release, code PR should have been raised latest by Nov2020.
 
