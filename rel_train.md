@@ -69,7 +69,7 @@ Code phase activities are,
 ``` 
 Example Feature : Dynamic Port Breakout - developed for 202006 release
 
-a) Code PRs :	https://github.com/Azure/sonic-swss/pull/1242
+Code PRs 	:	https://github.com/Azure/sonic-swss/pull/1242
 				https://github.com/Azure/sonic-buildimage/pull/3910
 				https://github.com/Azure/sonic-utilities/pull/765
 				https://github.com/Azure/sonic-platform-common/pull/72
