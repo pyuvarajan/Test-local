@@ -12,7 +12,7 @@ This document describes the scope of a SONiC Community member, and his/her contr
 
 # 1 Overview on SONiC Release Information
 
-## 1.1 SONiC Release Train so far
+## 1.1 SONiC Release Train 
 Community has been making three SONiC releases per year until year 2018. From 2019, two releases are made in a year, once by mid of year and other by end of the year.
 
 Various stages of a release include the following.
@@ -40,9 +40,13 @@ c) [Design review completion and minutes](https://groups.google.com/d/msg/sonicp
 d) [Merged design document](https://github.com/Azure/SONiC/blob/master/doc/dynamic-port-breakout/sonic-dynamic-port-breakout-HLD.md)
 
 ### 1.1.3 Coding & Testing 
-The next phase is Coding the feature. Code the the feature and raise a Pull request for code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  For example, for 202012 release, code PR should have been raised latest by Nov2020.
+The next phase is Coding the feature. Code the the feature and raise a Pull request for code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  
 
-Code PR review and merging should be completed by last month of the release. For example, for 202012 release, PR should have been merged by Dec2020. Periodic updates has to be given to the [Release Progress Tracking](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202006) sheet. All PR’s related to feature should be label/Tag in the PR in order to track the same.
+For example, for 202012 release, code PR should have been raised latest by Nov2020.
+
+Periodic updates has to be given to the [Release Progress Tracking](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202006) sheet. All PR’s related to feature should be label/Tag in the PR in order to track the same. Code PR review and merging should be completed by last month of the release. 
+
+For example, for 202012 release, PR should have been merged by Dec2020. 
 
 
 ### 1.1.4 Release
