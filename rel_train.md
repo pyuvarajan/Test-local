@@ -23,20 +23,14 @@ Various stages of a release include the following.
 ##### 1.1.4 Release  
 
 ### 1.1.1 Planning 
-Plan the feature/enhancement for a particular release train and inform community to add it to the roadmap. Members should inform community about 
-feature set within a month after previous release. Provide an update to community with the plan with specific requests for HLD review dates and 
-probable code review dates. Identify, discuss and finalize reviewer for the feature and get an assigned reviewer for the feature. 
+Plan the feature/enhancement for a particular release train and inform community to add it to the roadmap. Members should inform community about feature set within a month after previous release. Provide an update to community with the plan with specific requests for HLD review dates and probable code review dates. Identify, discuss and finalize reviewer for the feature and get an assigned reviewer for the feature. 
 
 For example, for 202012 release commitment should be given latest by July2020 and HLD and code reviewer should be assigned latest by Aug2020.
 
 ### 1.1.2 Design
-The next phase after the planning would be a design phase for the feature. Prepare the HLD documet in markdown format, and raise Pull Request(PR) 
-in the azure/SONiC repository in their appropriate feature folder (create a new folder if there isn't a existing one 
-(example : https://github.com/Azure/SONiC/tree/master/doc) and send it to community for review. 
-Once a design is done, request for design review, and get it reviewed in community meeting. Address the review comments if any and ensure that HLD is merged.
-Design for the feature should be completed before fourth month of a release.  
+The next phase after the planning would be a design phase for the feature. Prepare the HLD documet in markdown format, and raise Pull Request(PR) in the azure/SONiC repository in their appropriate feature folder (create a new folder if there isn't a existing one (example : https://github.com/Azure/SONiC/tree/master/doc) and send it to community for review. Once a design is done, request for design review, and get it reviewed in community meeting. Address the review comments if any and ensure that HLD is merged. Design for the feature should be completed before fourth month of a release. 
 
-For example, for 202012 release design PR should be merged latest by Oct2020. 
+For example, for 202012 release design PR should be merged latest by Oct2020.
 
 Here are few existing features link mentioned below for our understanding : 
 
