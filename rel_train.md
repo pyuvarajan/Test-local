@@ -24,7 +24,7 @@ The next release is planned for 202012
 
 SONiC release follows the standard development cycle that includes Planning, Design, Coding, Testing and Release as given below.  
 
-![](https://github.com/pyuvarajan/Test-local/blob/master/release_train_png.png)
+![](https://github.com/pyuvarajan/Test-local/blob/master/release_train.png)
 
 ## Planning 
 This phase includes the following activities.
@@ -41,7 +41,7 @@ This phase includes the following activities.
 5. Present the design during the review meeting. If there are multiple open questions at the end of meeting, schedule offline discussion with the reviewers and address them.
 6. Address the review comments and ensure that the HLD is merged. 
 
-All of the above design activities should be completed before fourth month of a release. Example : For 202012 release, design PR should be merged latest by Oct2020.
+All of the above design activities should be completed before fourth month of a release. For example the design PR for 202012 release should be merged latest by Oct2020.
 
 ``` 
 Example Feature : Dynamic Port Breakout - developed for 202006 release
@@ -54,16 +54,20 @@ d) Merged design document - https://github.com/Azure/SONiC/blob/master/doc/dynam
 ```
 
 ## Coding & Testing 
-The next phase is Coding the feature. Code the feature and raise a PR for the code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  
-
-For example : For 202012 release, code PR should have been raised latest by Nov2020.
-
-Periodic updates has to be given to the [Release Progress Tracking](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202006) sheet. All PR’s related to feature should be label/Tag in the PR in order to track the same. Code PR review and merging should be completed by last month of the release. 
-
-For example : For 202012 release, PR should have been merged by Dec2020. 
-
+Code phase activities are, 
+1. Code the feature and raise a PR for the codes. 
+2. All the PR pertaining to the feature should be listed and informed to the community. 
+3. Inform the reviewer about the PR and schedule the review. 
+4. Address the review comments and ensure that the PR is merged.
+5. Testing for the code should go in parallel along with the Test report. 
+6. Code PR should be raised latest by 5th month of the release. For example the code PRs for 202012 release, should have been raised latest by Nov2020.
+7. Periodic updates on the code PR and its status has to be updated in [Release Progress Tracking](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202006) sheet. 
+8. All PR’s related to feature should be label/Tag in the PR in order to track the same. 
+9. Code PR review and merging should be completed by last month of the release. For example the PR merge for 202012 release, should be completed by Dec2020. 
+10. Config commands and show commands pertaining to the feature should be mentioned in the Azure/SONiC repository within the appropriate folder.
 
 ## Release
-A branch(need link) will be pulled out on the last day of the release. Image stabilization shall happen for 1 or 2 months after branching. Any feature that is not completed before the branching shall catch the next train.
+1. With completion of all the activities for the feature, a [branch](https://github.com/Azure/sonic-buildimage/tree/202006) will be pulled out on the last day of the release. For example branch pull for the 202012 release, will happen on 31st Dec 2020.
+2. Image stabilization shall happen for 1 or 2 months after branching. 
+3. Any feature that is not completed before the branching shall catch the next train.
 
-For example : For 202012 release, branch will be pulled out on 31st Dec 2020. 
