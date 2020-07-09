@@ -18,7 +18,7 @@ Community has been making three SONiC releases per year until year 2018. From 20
 7. 201911 - https://github.com/Azure/sonic-buildimage/tree/201911
 8. 202006 - https://github.com/Azure/sonic-buildimage/tree/202006
 
-The next release is planned for 202012
+The next release is planned for 202012.
 
 # Release Process for Feature Development
 
