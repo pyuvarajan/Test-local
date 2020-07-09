@@ -17,10 +17,10 @@ Community has been making three SONiC releases per year until year 2018. From 20
 
 Various stages of a release include the following.
 	
-##### 1.1.1 Planning 
-##### 1.1.2 Design 
-##### 1.1.3 Coding & Testing  
-##### 1.1.4 Release  
+#####  1.1.1 Planning 
+#####  1.1.2 Design 
+#####  1.1.3 Coding & Testing  
+#####  1.1.4 Release  
 
 ![](https://github.com/pyuvarajan/Test-local/blob/master/release_train_png.png)
 
