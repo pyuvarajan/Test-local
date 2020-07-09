@@ -30,7 +30,7 @@ Plan the feature/enhancement for a particular release train and inform community
 For example : For 202012 release commitment should be given latest by July2020 and HLD and code reviewer should be assigned latest by Aug2020.
 
 ### 1.1.2 Design
-The next phase after the planning would be a design phase for the feature. Prepare the HLD documet in markdown format, and raise Pull Request(PR) in the azure/SONiC repository in their appropriate feature folder (create a new folder if there isn't a existing one) [example](https://github.com/Azure/SONiC/tree/master/doc) and send it to community for review. Once a design is done, request for design review, and get it reviewed in community meeting. Address the review comments if any and ensure that HLD is merged. Design for the feature should be completed before fourth month of a release. 
+The next phase after the planning would be a design phase for the feature. Prepare the HLD documet in markdown format, and raise Pull Request(PR) in the azure/SONiC repository in their appropriate feature folder (create a new folder if there isn't a existing one) "[example](https://github.com/Azure/SONiC/tree/master/doc)" and send it to community for review. Once a design is done, request for design review, and get it reviewed in community meeting. Address the review comments if any and ensure that HLD is merged. Design for the feature should be completed before fourth month of a release. 
 
 For example : For 202012 release design PR should be merged latest by Oct2020.
 
