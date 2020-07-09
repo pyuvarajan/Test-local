@@ -34,7 +34,6 @@ For example, for 202012 release design PR should be merged latest by Oct2020.
 
 Here are few existing features link mentioned below for our understanding : 
 
-Examples:<br>
 a) [Design PR](https://github.com/Azure/SONiC/pull/450)<br>
 b) [Design Review meeting plan](https://groups.google.com/forum/#!msg/sonicproject/jznL7kDtfUM/RiQnZ-BsAwAJ)<br>
 c) [Design review completion and minutes](https://groups.google.com/d/msg/sonicproject/kST4pB3k-Hw/c-cL03PhAwAJ)<br>
