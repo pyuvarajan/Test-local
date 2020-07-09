@@ -42,7 +42,7 @@ c) [Design review completion and minutes](https://groups.google.com/d/msg/sonicp
 d) [Merged design document](https://github.com/Azure/SONiC/blob/master/doc/dynamic-port-breakout/sonic-dynamic-port-breakout-HLD.md)
 
 ### 1.1.3 Coding & Testing 
-The next phase is Coding the feature. Code the feature and raise a Pull request for the code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  
+The next phase is Coding the feature. Code the feature and raise a PR for the code. All the PR pertaining to the feature should be listed and informed to the community. Plan for a code review with community, and address the review comments if any. Once the review comments are addressed, ensure that PR is merged. Testing for the code should go in parallel along with the Test report. Code PR should be raised latest by 5th month of the release.  
 
 For example : For 202012 release, code PR should have been raised latest by Nov2020.
 
