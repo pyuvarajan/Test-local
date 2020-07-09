@@ -52,4 +52,4 @@ For example : For 202012 release, PR should have been merged by Dec2020.
 
 
 ### 1.1.4 Release
-A branch(need link) will be pulled out on the last day of the release. For example : For 202012 release, branch will be pulled out on 31st Dec 2020. Image stabilization shall happen for 1 or 2 months after branching
+A branch(need link) will be pulled out on the last day of the release. For example : For 202012 release, branch will be pulled out on 31st Dec 2020. Image stabilization shall happen for 1 or 2 months after branching. Any feature that is not completed before the branching shall catch the next train.
