@@ -11,10 +11,10 @@ List of new features is as follows.
 
 # 1. Features And Enhancements  
 
-### sah		
+### sah.h		
 			saimacsec and saisystem port API has bee added
 
-### saiacl	
+### saiacl.h	
 			sai ACL Table attribute field(SAI_ACL_TABLE_ATTR_FIELD) has been added for vlan tags, macsec_sci,mpls label/Exp/TTL/BOS, and GRE key 
 			sai acl entry action for macsec_flow, ecmp hash id has been added
 
