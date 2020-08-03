@@ -21,10 +21,10 @@ sai ACL Table attribute field(SAI_ACL_TABLE_ATTR_FIELD) has been added for vlan 
 
 ### saibfd.h	
 Support for static FDB Entries to allow MAC Move -  When MAC_MOVE is explicitly disabled for a static MAC entry via this attribute, the trap introduced in #696 would also not be generated.
-FDB entries modifications for
-		1.)Bulk create FDB entry
-		2.)Bulk remove FDB entry
-		3.)Bulk set attribute on FDB entry
+FDB entries modifications for<br>
+		1.)Bulk create FDB entry<br>
+		2.)Bulk remove FDB entry<br>
+		3.)Bulk set attribute on FDB entry<br>
 		4.)Bulk get attribute on FDB entry
 
 ### saihash.h	
