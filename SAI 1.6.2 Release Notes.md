@@ -341,15 +341,104 @@ typedef sai_status_t (*sai_bulk_get_fdb_entry_attribute_fn)(
 
 ```
 
-
 ### saihash.h	
-Support for static FDB Entries to allow MAC Move such as Source/Destination IPv4 and IPv6 and sai_create_hash_fn, sai_remove_hash_fn, sai_set_hash_attribute_fn and sai_get_hash_attribute_fn has been added
+Defintion type for sai_hash_api has been modified for create/remove/set/get for fine_grained_hash_field. Support for static FDB Entries to allow MAC Move such as Source/Destination IPv4 and IPv6 has been added
+
+```
+
+    sai_create_fine_grained_hash_field_fn          create_fine_grained_hash_field;
+    sai_remove_fine_grained_hash_field_fn          remove_fine_grained_hash_field;
+    sai_set_fine_grained_hash_field_attribute_fn   set_fine_grained_hash_field_attribute;
+    sai_get_fine_grained_hash_field_attribute_fn   get_fine_grained_hash_field_attribute;
+	
+	```	
 
 ### sailag.h	
 LAG system port ID has been added. The application must manage the allocation of the system port aggregate IDs. associated with the LAG for consistency across all switches in a VOQ based system. The system port aggregate ID range is from 1 to SAI_SWITCH_ATTR_NUMBER_OF_LAGS. The default value of 0 means this field is not used and SAI will allocate the system port aggregate ID internally. Valid only when SAI_SWITCH_ATTR_TYPE	== SAI_SWITCH_TYPE_VOQ
 
+```
+    * @brief TPID
+     *
+     * @type sai_uint16_t
+     * @flags CREATE_AND_SET
+     * @isvlan false
+     * @default 0x8100
+     */
+    SAI_LAG_ATTR_TPID,
+
+    /**
+     * @brief LAG system port ID
+     *
+     * The application must manage the allocation of the system port aggregate IDs
+     * associated with the LAG for consistency across all switches in a VOQ based
+     * system. The system port aggregate ID range is from 1 to SAI_SWITCH_ATTR_NUMBER_OF_LAGS.
+     * The default value of 0 means this field is not used and SAI will allocate the system
+     * port aggregate ID internally.
+     * Valid only when SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_VOQ
+     *
+     * @type sai_uint32_t
+     * @flags CREATE_ONLY
+     * @default 0
+     */
+    SAI_LAG_ATTR_SYSTEM_PORT_AGGREGATE_ID,
+
+    /**
+
+```
+
 ### saimpls.h	
 Provide TTL and QoS treatment during MPLS encap and decap. Associate TC by a label, QOS MAP and associate COLOR by a QOS MAP
+
+```
+
+typedef enum _sai_inseg_entry_psc_type_t
+{
+    /**
+     * @brief EXP of MPLS label infers both TC and COLOR
+     */
+    SAI_INSEG_ENTRY_PSC_TYPE_ELSP,
+
+    /**
+     * @brief MPLS label infers TC and EXP of MPLS label infers COLOR
+     */
+    SAI_INSEG_ENTRY_PSC_TYPE_LLSP
+} sai_inseg_entry_psc_type_t;
+
+typedef enum _sai_inseg_entry_pop_ttl_mode_t
+{
+    /**
+     * @brief Uniform mode
+     *
+     * TTL of inner header is computed based on TTL of outer header on pop.
+     */
+    SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM,
+
+    /**
+     * @brief Pipe mode
+     *
+     * TTL of inner header is left unchanged on pop.
+     */
+    SAI_INSEG_ENTRY_POP_TTL_MODE_PIPE
+} sai_inseg_entry_pop_ttl_mode_t;
+
+typedef enum _sai_inseg_entry_pop_qos_mode_t
+{
+    /**
+     * @brief Uniform mode
+     *
+     * DSCP or EXP of inner header is computed based on TC AND COLOR of outer header on pop.
+     */
+    SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM,
+
+    /**
+     * @brief Uniform mode
+     *
+     * DSCP or EXP of inner header is left unchanged on pop.
+     */
+    SAI_INSEG_ENTRY_POP_QOS_MODE_PIPE
+} sai_inseg_entry_pop_qos_mode_t;
+
+```
 
 ### saineighbor.h  
 Encapsulation index flag is added. This is a flag which states that the encap index was imposed. On create and set the SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX must be present.
