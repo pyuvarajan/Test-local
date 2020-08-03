@@ -12,11 +12,12 @@ List of new features is as follows.
 # 1. Features And Enhancements  
 
 ### sah.h		
-			saimacsec and saisystem port API has bee added
+
+saimacsec and saisystem port API has bee added
 
 ### saiacl.h	
-			sai ACL Table attribute field(SAI_ACL_TABLE_ATTR_FIELD) has been added for vlan tags, macsec_sci,mpls label/Exp/TTL/BOS, and GRE key 
-			sai acl entry action for macsec_flow, ecmp hash id has been added
+
+sai ACL Table attribute field(SAI_ACL_TABLE_ATTR_FIELD) has been added for vlan tags, macsec_sci,mpls label/Exp/TTL/BOS, and GRE key. sai acl entry action for macsec_flow, ecmp hash id has been added
 
 ### saibfd.h	
 				Support for static FDB Entries to allow MAC Move -  When MAC_MOVE is explicitly disabled for a static MAC entry via this attribute, the trap introduced in #696 would also not be generated.
