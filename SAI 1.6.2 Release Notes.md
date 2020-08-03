@@ -443,8 +443,128 @@ typedef enum _sai_inseg_entry_pop_qos_mode_t
 ### saineighbor.h  
 Encapsulation index flag is added. This is a flag which states that the encap index was imposed. On create and set the SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX must be present.
 
+```
+/**
+     * @brief Encapsulation Index
+     *
+     * Defines the neighbor's encapsulation index
+     *
+     * @type sai_uint32_t
+     * @flags CREATE_AND_SET
+     * @default 0
+     */
+    SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX,
+
+    /**
+     * @brief Encapsulation index is imposed
+     *
+     * This is a flag which states that the encap index was imposed. On create and set
+     * the SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX must be present.
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     * @default false
+     */
+    SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_IMPOSE_INDEX,
+
+    /**
+     * @brief Is Neighbor Local
+     *
+     * This is a flag which states that the neighbor being created is local. This can
+     * be used to sanity check the impose index flag. For example, in some implementations
+     * imposing an encap index when the RIF is port-based and the neighbor is local
+     * may not be allowed.
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     * @default true
+     */
+    SAI_NEIGHBOR_ENTRY_ATTR_IS_LOCAL,
+
+    /**
+
+```
+
 ### sainexthop.h	
 Provide TTL and QoS treatment during MPLS encap and decap. 
+
+```
+ /**
+     * @brief To enable/disable Decrement TTL
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     * @default false
+     */
+    SAI_NEXT_HOP_ATTR_DECREMENT_TTL,
+
+    /**
+     * @brief MPLS Outsegment type
+     *
+     * @type sai_outseg_type_t
+     * @flags CREATE_AND_SET
+     * @default SAI_OUTSEG_TYPE_SWAP
+     * @validonly SAI_NEXT_HOP_ATTR_TYPE == SAI_NEXT_HOP_TYPE_MPLS
+     */
+    SAI_NEXT_HOP_ATTR_OUTSEG_TYPE,
+
+    /**
+     * @brief MPLS Outsegment TTL mode
+     *
+     * @type sai_outseg_ttl_mode_t
+     * @flags CREATE_AND_SET
+     * @default SAI_OUTSEG_TTL_MODE_UNIFORM
+     * @validonly SAI_NEXT_HOP_ATTR_TYPE == SAI_NEXT_HOP_TYPE_MPLS and SAI_NEXT_HOP_ATTR_OUTSEG_TYPE == SAI_OUTSEG_TYPE_PUSH
+     */
+    SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE,
+
+    /**
+     * @brief MPLS Outsegment TTL value for pipe mode
+     *
+     * @type sai_uint8_t
+     * @flags CREATE_AND_SET
+     * @default 255
+     * @validonly SAI_NEXT_HOP_ATTR_TYPE == SAI_NEXT_HOP_TYPE_MPLS and SAI_NEXT_HOP_ATTR_OUTSEG_TYPE == SAI_OUTSEG_TYPE_PUSH and SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE == SAI_OUTSEG_TTL_MODE_PIPE
+     */
+    SAI_NEXT_HOP_ATTR_OUTSEG_TTL_VALUE,
+
+    /**
+     * @brief MPLS Outsegment MPLS EXP mode
+     *
+     * @type sai_outseg_exp_mode_t
+     * @flags CREATE_AND_SET
+     * @default SAI_OUTSEG_EXP_MODE_UNIFORM
+     * @validonly SAI_NEXT_HOP_ATTR_TYPE == SAI_NEXT_HOP_TYPE_MPLS and SAI_NEXT_HOP_ATTR_OUTSEG_TYPE == SAI_OUTSEG_TYPE_PUSH
+     */
+    SAI_NEXT_HOP_ATTR_OUTSEG_EXP_MODE,
+
+    /**
+     * @brief MPLS Outsegment EXP value for pipe mode
+     *
+     * @type sai_uint8_t
+     * @flags CREATE_AND_SET
+     * @default 0
+     * @validonly SAI_NEXT_HOP_ATTR_TYPE == SAI_NEXT_HOP_TYPE_MPLS and SAI_NEXT_HOP_ATTR_OUTSEG_TYPE == SAI_OUTSEG_TYPE_PUSH and SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE == SAI_OUTSEG_TTL_MODE_PIPE
+     */
+    SAI_NEXT_HOP_ATTR_OUTSEG_EXP_VALUE,
+
+    /**
+     * @brief TC AND COLOR -> MPLS EXP MAP for Uniform Mode
+     *
+     * If present overrides SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP and SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     * @validonly SAI_NEXT_HOP_ATTR_TYPE == SAI_NEXT_HOP_TYPE_MPLS and SAI_NEXT_HOP_ATTR_OUTSEG_TYPE == SAI_OUTSEG_TYPE_PUSH and SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE == SAI_OUTSEG_TTL_MODE_UNIFORM
+     */
+    SAI_NEXT_HOP_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP,
+
+    /**
+
+```
 
 ### sainexthopgroup.h	
 1)Object index in the fine grain ECMP table. Index specifying the strict member's order.<br>
@@ -452,7 +572,38 @@ Provide TTL and QoS treatment during MPLS encap and decap.
 3)Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_FINE_GRAIN_ECMP. <br>
 4)Object's sequence ID for enforcing the members' order. Loose index specifying the member's order. <br>
 5)The index is not strict allowing for the missing IDs in a sequence. <br>
-6)It's driver's job to translate the sequence IDs to the real indexes in the group. Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_ORDERED_ECMP. 
+6)It's driver's job to translate the sequence IDs to the real indexes in the group. Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_ORDERED_ECMP. <br>
+
+```
+    /**
+     * @brief Configured group size
+     *
+     * Maximum desired number of members. The real size should
+     * be queried from SAI_NEXT_HOP_GROUP_ATTR_REAL_SIZE
+     *
+     * @type sai_uint32_t
+     * @flags CREATE_ONLY
+     * @default 0
+     * @validonly SAI_NEXT_HOP_GROUP_ATTR_TYPE == SAI_NEXT_HOP_GROUP_TYPE_FINE_GRAIN_ECMP
+     * @isresourcetype true
+     */
+    SAI_NEXT_HOP_GROUP_ATTR_CONFIGURED_SIZE,
+
+    /**
+     * @brief Real group size
+     *
+     * Can be different (greater or equal) from the configured
+     * size. Application must use this value to know the exact size
+     * of the group.
+     * Should be used with SAI_NEXT_HOP_GROUP_TYPE_FINE_GRAIN_ECMP.
+     *
+     * @type sai_uint32_t
+     * @flags READ_ONLY
+     */
+    SAI_NEXT_HOP_GROUP_ATTR_REAL_SIZE,
+
+    /**
+```
 
 ### saiport.h	
 1)Attribute data for #SAI_PORT_ATTR_INTERFACE_TYPE. Used for selecting electrical interface with specific electrical pin and signal quality. <br>
@@ -460,11 +611,78 @@ Provide TTL and QoS treatment during MPLS encap and decap.
 3)Port bind point for ingress MACsec ACL object. Bind (or unbind) an ingress MACsec ACL table on a port. Enable/Update ingress MACsec ACL table filtering by assigning the list of valid object id. Disable ingress filtering by assigning SAI_NULL_OBJECT_ID in the attribute value. <br>
 4)Link training failure status and error codes port stat PRBS error counts and list of port connector attributes are added. <br>
 
+```
+/**
+     * @brief Port bind point for ingress MACsec ACL object
+     *
+     * Bind (or unbind) an ingress MACsec ACL table on a port.
+     * Enable/Update ingress MACsec ACL table filtering by assigning the
+     * list of valid object id. Disable ingress filtering by assigning
+     * SAI_NULL_OBJECT_ID in the attribute value.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_ACL_TABLE
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_PORT_ATTR_INGRESS_MACSEC_ACL,
+
+    /**
+     * @brief Port bind point for egress MACsec ACL object
+     *
+     * Bind (or unbind) an egress MACsec ACL tables on a port.
+     * Enable/Update egress MACsec ACL table filtering by assigning the
+     * list of valid object id. Disable egress filtering by assigning
+     * SAI_NULL_OBJECT_ID in the attribute value.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_ACL_TABLE
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_PORT_ATTR_EGRESS_MACSEC_ACL,
+
+    /**
+     * @brief List of MACsec ports
+     *
+     * @type sai_object_list_t
+     * @flags READ_ONLY
+     * @objects SAI_OBJECT_TYPE_MACSEC_PORT
+     */
+    SAI_PORT_ATTR_MACSEC_PORT_LIST,
+
+    /**
+```
 ### saiqosmap.h	
 QOS Map to set traffic class and color to EXP.
 
-### saiqosmap.h	
-H/w Egress Unicast Queue and H/w Multicast Egress (Broadcast, Unknown unicast, Multicast) Queue has been added
+```
+ /** QOS Map to set EXP to Traffic class */
+    SAI_QOS_MAP_TYPE_MPLS_EXP_TO_TC = 0x0000000a,
+
+    /** QOS Map to set EXP to color */
+    SAI_QOS_MAP_TYPE_MPLS_EXP_TO_COLOR = 0x0000000b,
+
+    /** QOS Map to set traffic class and color to EXP */
+    SAI_QOS_MAP_TYPE_TC_AND_COLOR_TO_MPLS_EXP = 0x0000000c,
+```
+
+### saiqueue.h	
+H/w Egress Unicast Queue and H/w Multicast Egress (Broadcast, Unknown unicast, Multicast) Queue has been added.
+
+```
+/** H/w Virtual Output Queue (VOQ). This queue is ingress unicast queue */
+    SAI_QUEUE_TYPE_UNICAST_VOQ = 0x00000003,
+
+    /** H/w Virtual Output Queue (VOQ). This queue is fabric multicast queue */
+    SAI_QUEUE_TYPE_MULTICAST_VOQ = 0x00000004,
+
+    /** H/w Fabric Queue. */
+    SAI_QUEUE_TYPE_FABRIC_TX = 0x00000005,
+
+```
 
 ### saiswitch.h	
 1)Attribute data for #SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS, SAI_SWITCH_ATTR_FIRMWARE_LOAD_METHOD, SAI_SWITCH_ATTR_FIRMWARE_LOAD_TYPE, SAI_SWITCH_ATTR_TYPE has been added. <br>
@@ -475,10 +693,409 @@ H/w Egress Unicast Queue and H/w Multicast Egress (Broadcast, Unknown unicast, M
 6)Platform specific device register read access. This API provides platform adaption functionality to access device registers from driver. This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.<br>
 7)Platform specific device register write access. This API provides platform adaption functionality to access device registers from driver. This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.<br>
 8)Switch MDIO read API - Provides read access API for devices connected to MDIO from NPU SAI.<br>
-9)Switch MDIO write API - Provides write access API for devices connected to MDIO from NPU SAI.
+9)Switch MDIO write API - Provides write access API for devices connected to MDIO from NPU SAI.<br>
+
+```
+/**
+ * @brief Attribute data for #SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS
+ */
+typedef enum _sai_switch_hardware_access_bus_t
+{
+    /** Hardware access bus is MDIO */
+    SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO,
+
+    /** Hardware access bus is I2C */
+    SAI_SWITCH_HARDWARE_ACCESS_BUS_I2C,
+
+    /** Hardware access bus is CPLD */
+    SAI_SWITCH_HARDWARE_ACCESS_BUS_CPLD,
+
+} sai_switch_hardware_access_bus_t;
+
+/**
+ * @brief Attribute data for #SAI_SWITCH_ATTR_FIRMWARE_LOAD_METHOD
+ */
+typedef enum _sai_switch_firmware_load_method_t
+{
+    /** Do not download FW. Use already downloaded FW instead */
+    SAI_SWITCH_FIRMWARE_LOAD_METHOD_NONE,
+
+    /** Download FW internally via MDIO */
+    SAI_SWITCH_FIRMWARE_LOAD_METHOD_INTERNAL,
+
+    /** Load FW from EEPROM */
+    SAI_SWITCH_FIRMWARE_LOAD_METHOD_EEPROM,
+
+} sai_switch_firmware_load_method_t;
+
+/**
+ * @brief Attribute data for #SAI_SWITCH_ATTR_FIRMWARE_LOAD_TYPE
+ */
+typedef enum _sai_switch_firmware_load_type_t
+{
+    /** Skip firmware download if firmware is already present */
+    SAI_SWITCH_FIRMWARE_LOAD_TYPE_SKIP,
+
+    /** Always download the firmware specified by firmware load method */
+    SAI_SWITCH_FIRMWARE_LOAD_TYPE_FORCE,
+
+    /** Check the firmware version. If it is different from current version download firmware */
+    SAI_SWITCH_FIRMWARE_LOAD_TYPE_AUTO,
+
+} sai_switch_firmware_load_type_t;
+
+/**
+ * @brief Attribute data for #SAI_SWITCH_ATTR_TYPE
+ */
+typedef enum _sai_switch_type_t
+{
+    /** Switch type is Switching Network processing unit */
+    SAI_SWITCH_TYPE_NPU,
+
+    /** Switch type is PHY */
+    SAI_SWITCH_TYPE_PHY,
+
+    /** Switch type is VOQ based NPU */
+    SAI_SWITCH_TYPE_VOQ,
+
+    /** Switch type is Fabric switch device */
+    SAI_SWITCH_TYPE_FABRIC,
+
+} sai_switch_type_t;
+
+/**
+
+```
+```
+/**
+     * @brief Switch hardware access bus MDIO/I2C/CPLD
+     *
+     * @type sai_switch_hardware_access_bus_t
+     * @flags MANDATORY_ON_CREATE | CREATE_ONLY
+     * @condition SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_PHY
+     */
+    SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS,
+
+    /**
+     * @brief Platform context information
+     *
+     * Platform context information provided by the host adapter to driver.
+     * This information is Host adapter specific, typically used for maintain
+     * synchronization and device information. Driver will give this context back
+     * to adapter as part of call back sai_switch_register_read/write_fn API.
+     *
+     * @type sai_uint64_t
+     * @flags MANDATORY_ON_CREATE | CREATE_ONLY
+     * @condition SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_PHY
+     */
+    SAI_SWITCH_ATTR_PLATFROM_CONTEXT,
+
+    /**
+     * @brief Platform adaption device read callback function passed to the adapter.
+     * This is mandatory function for driver when device access not supported by file system.
+     *
+     * Use sai_switch_register_read_fn as read function.
+     *
+     * @type sai_pointer_t sai_switch_register_read_fn
+     * @flags MANDATORY_ON_CREATE | CREATE_AND_SET
+     * @condition SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_PHY
+     */
+    SAI_SWITCH_ATTR_REGISTER_READ,
+
+    /**
+     * @brief Platform adaption device write callback function passed to the adapter.
+     * This is mandatory function for driver when device access not supported by file system.
+     *
+     * Use sai_switch_register_write_fn as write function.
+     *
+     * @type sai_pointer_t sai_switch_register_write_fn
+     * @flags MANDATORY_ON_CREATE | CREATE_AND_SET
+     * @condition SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_PHY
+     */
+    SAI_SWITCH_ATTR_REGISTER_WRITE,
+
+    /**
+     * @brief Enable/disable broadcast firmware download
+     *
+     * TRUE - Enable firmware download as broadcast.
+     * FALSE - Enable firmware download as unicast.
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_BROADCAST,
+
+    /**
+     * @brief Firmware load method
+     *
+     * @type sai_switch_firmware_load_method_t
+     * @flags CREATE_ONLY
+     * @default SAI_SWITCH_FIRMWARE_LOAD_METHOD_INTERNAL
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_LOAD_METHOD,
+
+    /**
+     * @brief Firmware load type auto/force/skip
+     *
+     * Check firmware version. If it is different from current version load firmware.
+     * Otherwise always download the firmware specified by firmware load method.
+     *
+     * @type sai_switch_firmware_load_type_t
+     * @flags CREATE_ONLY
+     * @default SAI_SWITCH_FIRMWARE_LOAD_TYPE_AUTO
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_LOAD_TYPE,
+
+    /**
+     * @brief Execute Firmware download
+     *
+     * In case of firmware download method broadcast, Set this attribute on
+     * any one of device connected to same bus. As part of execute firmware will broadcast to
+     * to all broadcast enabled devices on bus.
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     * @default false
+     * @validonly SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_BROADCAST == true
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_EXECUTE,
+
+    /**
+     * @brief End Broadcast
+     *
+     * Broadcast is enabled for BUS, All configurations will be broadcast.
+     * End broadcast before initialize device.
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     * @default false
+     * @validonly SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_BROADCAST == true
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_BROADCAST_STOP,
+
+    /**
+     * @brief Firmware status verify and complete initialize device.
+     *
+     * Host Adapter should mandatory to set attribute to true,
+     * switch before doing any other configurations.
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     * @default false
+     * @validonly SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_BROADCAST == true
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_VERIFY_AND_INIT_SWITCH,
+
+    /**
+     * @brief Firmware running status
+     *
+     * Indicates firmware download and running status.
+     *
+     * TRUE - Firmware running
+     * FALSE - Firmware not running.
+     *
+     * @type bool
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_STATUS,
+
+    /**
+     * @brief Firmware major version number
+     *
+     * @type sai_uint32_t
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_MAJOR_VERSION,
+
+    /**
+     * @brief Firmware minor version number
+     *
+     * @type sai_uint32_t
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_FIRMWARE_MINOR_VERSION,
+
+    /**
+     * @brief Get the port connector list
+     *
+     * validonly SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_PHY
+     *
+     * @type sai_object_list_t
+     * @flags READ_ONLY
+     * @objects SAI_OBJECT_TYPE_PORT_CONNECTOR
+     */
+    SAI_SWITCH_ATTR_PORT_CONNECTOR_LIST,
+
+    /**
+     * @brief Propagate line side port state to system side port
+     *
+     * System side port state will reflect the ASIC port state.
+     * Host adapter can depends on ASIC port state instead of port states from system side,
+     * line side and ASIC port to determine interface operation status to application.
+     *
+     * TRUE - Device support for propagate line side port link status to system side port.
+     * FALSE - Device does not support propagate port states.
+     *
+     * validonly SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_PHY
+     *
+     * @type bool
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_PROPOGATE_PORT_STATE_FROM_LINE_TO_SYSTEM_PORT_SUPPORT,
+
+    /**
+     * @brief Switch type NPU/PHY
+     *
+     * @type sai_switch_type_t
+     * @flags CREATE_ONLY
+     * @default SAI_SWITCH_TYPE_NPU
+     */
+    SAI_SWITCH_ATTR_TYPE,
+
+    /**
+     * @brief MACsec object for this switch.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_MACSEC
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_ATTR_MACSEC_OBJECT_ID,
+
+    /**
+     * @brief Enable EXP -> TC MAP on switch.
+     *
+     * MAP id = #SAI_NULL_OBJECT_ID to disable map on switch.
+     * Default no map.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_TC_MAP,
+
+    /**
+     * @brief Enable EXP -> COLOR MAP on switch
+     *
+     * MAP id = #SAI_NULL_OBJECT_ID to disable map on switch.
+     * Default no map in which case all exp values map to green color
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP,
+
+    /**
+     * @brief Enable TC + COLOR -> EXP MAP
+     *
+     * Map id = #SAI_NULL_OBJECT_ID to disable map on switch.
+     * Default no map.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP,
+
+    /**
+     * @brief Vendor specific switch ID. Identifies switch chip
+     *
+     * Mandatory in VOQ Switch
+     *
+     * @type sai_uint32_t
+     * @flags MANDATORY_ON_CREATE | CREATE_ONLY
+     */
+    SAI_SWITCH_ATTR_SWITCH_ID,
+
+    /**
+     * @brief Maximum number of cores in the VOQ System (chassis)
+     *
+     * @type sai_uint32_t
+     * @flags MANDATORY_ON_CREATE | CREATE_ONLY
+     * @condition SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_VOQ
+     */
+    SAI_SWITCH_ATTR_MAX_SYSTEM_CORES,
+
+    /**
+     * @brief System port configuration list.
+     *
+     * @type sai_system_port_config_list_t
+     * @flags MANDATORY_ON_CREATE | CREATE_ONLY
+     * @condition SAI_SWITCH_ATTR_TYPE == SAI_SWITCH_TYPE_VOQ
+     */
+    SAI_SWITCH_ATTR_SYSTEM_PORT_CONFIG_LIST,
+
+    /**
+     * @brief Number of system ports
+     *
+     * @type sai_uint32_t
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_NUMBER_OF_SYSTEM_PORTS,
+
+    /**
+     * @brief Get the system port list
+     *
+     * @type sai_object_list_t
+     * @flags READ_ONLY
+     * @objects SAI_OBJECT_TYPE_SYSTEM_PORT
+     * @default internal
+     */
+    SAI_SWITCH_ATTR_SYSTEM_PORT_LIST,
+
+    /**
+     * @brief Number of fabric ports on the switch
+     *
+     * @type sai_uint32_t
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_NUMBER_OF_FABRIC_PORTS,
+
+    /**
+     * @brief Get the fabric port list
+     *
+     * @type sai_object_list_t
+     * @flags READ_ONLY
+     * @objects SAI_OBJECT_TYPE_PORT
+     * @default internal
+     */
+    SAI_SWITCH_ATTR_FABRIC_PORT_LIST,
+
+    /**
+```
 
 ### saitunnel.h	
-Create and Set for Tunnel Attributes are added
+Create and Set for Tunnel Attributes are added.
+
+```
+/**
+ * @brief Defines tunnel peer mode
+ */
+typedef enum _sai_tunnel_peer_mode_t
+{
+    /**
+     * @brief P2P Tunnel
+     */
+    SAI_TUNNEL_PEER_MODE_P2P,
+
+    /**
+     * @brief P2MP Tunnel
+     */
+    SAI_TUNNEL_PEER_MODE_P2MP,
+
+} sai_tunnel_peer_mode_t;
+
+/**
+```
 
 ### saitypes.h	
 				typedef UINT8   sai_macsec_sak_t[32];
