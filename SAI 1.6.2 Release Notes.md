@@ -19,13 +19,328 @@ saimacsec and saisystem port API has bee added
 
 sai ACL Table attribute field(SAI_ACL_TABLE_ATTR_FIELD) has been added for vlan tags, macsec_sci,mpls label/Exp/TTL/BOS, and GRE key. sai acl entry action for macsec_flow, ecmp hash id has been added
 
-### saibfd.h	
+```
+
+SAI_ACL_TABLE_ATTR_FIELD_HAS_VLAN_TAG,
+
+    /**
+     * @brief SCI value in MACsec packet SecTAG
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MACSEC_SCI,
+
+    /**
+     * @brief Label value for MPLS label on the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_LABEL,
+
+    /**
+     * @brief TTL value for MPLS label on the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_TTL,
+
+    /**
+     * @brief EXP value for MPLS label on the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_EXP,
+
+    /**
+     * @brief BOS bit value for MPLS label on the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_BOS,
+
+    /**
+     * @brief Label value for second MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL1_LABEL,
+
+    /**
+     * @brief TTL value for second MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL1_TTL,
+
+    /**
+     * @brief EXP value for second MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL1_EXP,
+
+    /**
+     * @brief BOS bit value for second MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL1_BOS,
+
+    /**
+     * @brief Label value for third MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL2_LABEL,
+
+    /**
+     * @brief TTL value for third MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL2_TTL,
+
+    /**
+     * @brief EXP value for third MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL2_EXP,
+
+    /**
+     * @brief BOS bit value for third MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL2_BOS,
+
+    /**
+     * @brief Label value for fourth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL3_LABEL,
+
+    /**
+     * @brief TTL value for fourth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL3_TTL,
+
+    /**
+     * @brief EXP value for fourth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL3_EXP,
+
+    /**
+     * @brief BOS bit value for fourth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL3_BOS,
+
+    /**
+     * @brief Label value for fifth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL4_LABEL,
+
+    /**
+     * @brief TTL value for fifth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL4_TTL,
+
+    /**
+     * @brief EXP value for fifth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL4_EXP,
+
+    /**
+     * @brief BOS bit value for fifth MPLS label from the top
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL4_BOS,
+
+    /* User Based metadata [bool] */
+
+    /**
+	
+	
+ SAI_ACL_TABLE_ATTR_FIELD_GRE_KEY,
+
+    /**
+     * @brief TAM INT type
+     *
+     * @type bool
+     * @flags CREATE_ONLY
+     * @default false
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_TAM_INT_TYPE,
+
+    /**
+     * @brief End of ACL Table Match Field
+     */
+    SAI_ACL_TABLE_ATTR_FIELD_END = SAI_ACL_TABLE_ATTR_FIELD_TAM_INT_TYPE,
+	
+```
+			
+### saifdb.h	
 Support for static FDB Entries to allow MAC Move -  When MAC_MOVE is explicitly disabled for a static MAC entry via this attribute, the trap introduced in #696 would also not be generated.
 FDB entries modifications for<br>
 		1.)Bulk create FDB entry<br>
 		2.)Bulk remove FDB entry<br>
 		3.)Bulk set attribute on FDB entry<br>
 		4.)Bulk get attribute on FDB entry
+
+```
+
+/**
+ * @brief Bulk create FDB entry
+ *
+ * @param[in] object_count Number of objects to create
+ * @param[in] fdb_entry List of object to create
+ * @param[in] attr_count List of attr_count. Caller passes the number
+ *    of attribute for each object to create.
+ * @param[in] attr_list List of attributes for every object.
+ * @param[in] mode Bulk operation error handling mode.
+ * @param[out] object_statuses List of status for every object. Caller needs to
+ * allocate the buffer
+ *
+ * @return #SAI_STATUS_SUCCESS on success when all objects are created or
+ * #SAI_STATUS_FAILURE when any of the objects fails to create. When there is
+ * failure, Caller is expected to go through the list of returned statuses to
+ * find out which fails and which succeeds.
+ */
+typedef sai_status_t (*sai_bulk_create_fdb_entry_fn)(
+        _In_ uint32_t object_count,
+        _In_ const sai_fdb_entry_t *fdb_entry,
+        _In_ const uint32_t *attr_count,
+        _In_ const sai_attribute_t **attr_list,
+        _In_ sai_bulk_op_error_mode_t mode,
+        _Out_ sai_status_t *object_statuses);
+
+/**
+ * @brief Bulk remove FDB entry
+ *
+ * @param[in] object_count Number of objects to remove
+ * @param[in] fdb_entry List of objects to remove
+ * @param[in] mode Bulk operation error handling mode.
+ * @param[out] object_statuses List of status for every object. Caller needs to
+ * allocate the buffer
+ *
+ * @return #SAI_STATUS_SUCCESS on success when all objects are removed or
+ * #SAI_STATUS_FAILURE when any of the objects fails to remove. When there is
+ * failure, Caller is expected to go through the list of returned statuses to
+ * find out which fails and which succeeds.
+ */
+typedef sai_status_t (*sai_bulk_remove_fdb_entry_fn)(
+        _In_ uint32_t object_count,
+        _In_ const sai_fdb_entry_t *fdb_entry,
+        _In_ sai_bulk_op_error_mode_t mode,
+        _Out_ sai_status_t *object_statuses);
+
+/**
+ * @brief Bulk set attribute on FDB entry
+ *
+ * @param[in] object_count Number of objects to set attribute
+ * @param[in] fdb_entry List of objects to set attribute
+ * @param[in] attr_list List of attributes to set on objects, one attribute per object
+ * @param[in] mode Bulk operation error handling mode.
+ * @param[out] object_statuses List of status for every object. Caller needs to
+ * allocate the buffer
+ *
+ * @return #SAI_STATUS_SUCCESS on success when all objects are set or
+ * #SAI_STATUS_FAILURE when any of the objects fails to set. When there is
+ * failure, Caller is expected to go through the list of returned statuses to
+ * find out which fails and which succeeds.
+ */
+typedef sai_status_t (*sai_bulk_set_fdb_entry_attribute_fn)(
+        _In_ uint32_t object_count,
+        _In_ const sai_fdb_entry_t *fdb_entry,
+        _In_ const sai_attribute_t *attr_list,
+        _In_ sai_bulk_op_error_mode_t mode,
+        _Out_ sai_status_t *object_statuses);
+
+/**
+ * @brief Bulk get attribute on FDB entry
+ *
+ * @param[in] object_count Number of objects to get attribute
+ * @param[in] fdb_entry List of objects to get attribute
+ * @param[in] attr_count List of attr_count. Caller passes the number
+ *    of attribute for each object to get
+ * @param[inout] attr_list List of attributes to get on objects, one attribute per object
+ * @param[in] mode Bulk operation error handling mode
+ * @param[out] object_statuses List of status for every object. Caller needs to
+ * allocate the buffer
+ *
+ * @return #SAI_STATUS_SUCCESS on success when all objects are get or
+ * #SAI_STATUS_FAILURE when any of the objects fails to get. When there is
+ * failure, Caller is expected to go through the list of returned statuses to
+ * find out which fails and which succeeds.
+ */
+typedef sai_status_t (*sai_bulk_get_fdb_entry_attribute_fn)(
+        _In_ uint32_t object_count,
+        _In_ const sai_fdb_entry_t *fdb_entry,
+        _In_ const uint32_t *attr_count,
+        _Inout_ sai_attribute_t **attr_list,
+        _In_ sai_bulk_op_error_mode_t mode,
+        _Out_ sai_status_t *object_statuses);
+
+/**
+
+```
+
 
 ### saihash.h	
 Support for static FDB Entries to allow MAC Move such as Source/Destination IPv4 and IPv6 and sai_create_hash_fn, sai_remove_hash_fn, sai_set_hash_attribute_fn and sai_get_hash_attribute_fn has been added
