@@ -43,18 +43,18 @@ Encapsulation index flag is added. This is a flag which states that the encap in
 Provide TTL and QoS treatment during MPLS encap and decap. 
 
 ### sainexthopgroup.h	
-1)Object index in the fine grain ECMP table. Index specifying the strict member's order. 
-2)Allowed value range for is from 0 to SAI_NEXT_HOP_GROUP_ATTR_REAL_SIZE - 1. 
-3)Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_FINE_GRAIN_ECMP.
-4)Object's sequence ID for enforcing the members' order. Loose index specifying the member's order. 
-5)The index is not strict allowing for the missing IDs in a sequence. 
-6)It's driver's job to translate the sequence IDs to the real indexes in the group. Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_ORDERED_ECMP.
+1)Object index in the fine grain ECMP table. Index specifying the strict member's order.<br>
+2)Allowed value range for is from 0 to SAI_NEXT_HOP_GROUP_ATTR_REAL_SIZE - 1. <br>
+3)Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_FINE_GRAIN_ECMP. <br>
+4)Object's sequence ID for enforcing the members' order. Loose index specifying the member's order. <br>
+5)The index is not strict allowing for the missing IDs in a sequence. <br>
+6)It's driver's job to translate the sequence IDs to the real indexes in the group. Should only be used if the type of owning group is SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_ORDERED_ECMP. 
 
 ### saiport.h	
-1)Attribute data for #SAI_PORT_ATTR_INTERFACE_TYPE. Used for selecting electrical interface with specific electrical pin and signal quality.
-2)Port bind point for ingress/egress ACL object. Bind (or unbind) an ingress/egress ACL table or ACL group on a port. Enable/Update ingress/egress ACL table or ACL group filtering by assigning the list of valid object id. Disable ingress/egress filtering by assigning 		SAI_NULL_OBJECT_ID in the attribute value.
-3)Port bind point for ingress MACsec ACL object. Bind (or unbind) an ingress MACsec ACL table on a port. Enable/Update ingress MACsec ACL table filtering by assigning the list of valid object id. Disable ingress filtering by assigning SAI_NULL_OBJECT_ID in the attribute value.
-4)Link training failure status and error codes port stat PRBS error counts and list of port connector attributes are added.
+1)Attribute data for #SAI_PORT_ATTR_INTERFACE_TYPE. Used for selecting electrical interface with specific electrical pin and signal quality. <br>
+2)Port bind point for ingress/egress ACL object. Bind (or unbind) an ingress/egress ACL table or ACL group on a port. Enable/Update ingress/egress ACL table or ACL group filtering by assigning the list of valid object id. Disable ingress/egress filtering by assigning SAI_NULL_OBJECT_ID in the attribute value. <br>
+3)Port bind point for ingress MACsec ACL object. Bind (or unbind) an ingress MACsec ACL table on a port. Enable/Update ingress MACsec ACL table filtering by assigning the list of valid object id. Disable ingress filtering by assigning SAI_NULL_OBJECT_ID in the attribute value. <br>
+4)Link training failure status and error codes port stat PRBS error counts and list of port connector attributes are added. <br>
 
 ### saiqosmap.h	
 QOS Map to set traffic class and color to EXP.
@@ -63,14 +63,14 @@ QOS Map to set traffic class and color to EXP.
 H/w Egress Unicast Queue and H/w Multicast Egress (Broadcast, Unknown unicast, Multicast) Queue has been added
 
 ### saiswitch.h	
-1)Attribute data for #SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS, SAI_SWITCH_ATTR_FIRMWARE_LOAD_METHOD, SAI_SWITCH_ATTR_FIRMWARE_LOAD_TYPE, 		SAI_SWITCH_ATTR_TYPE has been added 
-2)Switch hardware access bus MDIO/I2C/CPLD has been added.
-3)Platform context information provided by the host adapter to driver. This information is Host adapter specific, typically used for maintain synchronization and device information. 
-4)Driver will give this context back to adapter as part of call back sai_switch_register_read/write_fn API.
-5)Platform adaption device write callback function passed to the adapter. This is mandatory function for driver when device access not supported by file system.
-6)Platform specific device register read access. This API provides platform adaption functionality to access device registers from driver. This is mandatory to pass as attribute to 	 			sai_create_switch when driver implementation does not support register access by device file system directly.
-7)Platform specific device register write access. This API provides platform adaption functionality to access device registers from driver. This is mandatory to pass as attribute to 				sai_create_switch when driver implementation does not support register access by device file system directly.
-8)Switch MDIO read API - Provides read access API for devices connected to MDIO from NPU SAI.
+1)Attribute data for #SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS, SAI_SWITCH_ATTR_FIRMWARE_LOAD_METHOD, SAI_SWITCH_ATTR_FIRMWARE_LOAD_TYPE, SAI_SWITCH_ATTR_TYPE has been added. <br>
+2)Switch hardware access bus MDIO/I2C/CPLD has been added. <br>
+3)Platform context information provided by the host adapter to driver. This information is Host adapter specific, typically used for maintain synchronization and device information. <br>
+4)Driver will give this context back to adapter as part of call back sai_switch_register_read/write_fn API. <br>
+5)Platform adaption device write callback function passed to the adapter. This is mandatory function for driver when device access not supported by file system. <br>
+6)Platform specific device register read access. This API provides platform adaption functionality to access device registers from driver. This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.<br>
+7)Platform specific device register write access. This API provides platform adaption functionality to access device registers from driver. This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.<br>
+8)Switch MDIO read API - Provides read access API for devices connected to MDIO from NPU SAI.<br>
 9)Switch MDIO write API - Provides write access API for devices connected to MDIO from NPU SAI.
 
 ### saitunnel.h	
