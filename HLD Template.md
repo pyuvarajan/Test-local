@@ -38,15 +38,15 @@ This section covers the detail implementation of the feature. This section cover
 
 ### 5. SAI API 
 
-This section covers the changes made or new API added in SAI API for implementing this feature. If there is no change in SAI API for HLD feature, It should be implicitly mentioned in this section.
+This section covers the changes made or new API added in SAI API for implementing this feature. If there is no change in SAI API for HLD feature, it should be precisely mentioned in this section.
 
 ### 6. CLI Enhancements 
 
-This section covers the addition/deletion/modification of CLI changes needed for the feature. If there is no change in CLI for HLD feature, It should be implicitly mentioned in this section. This section should also ensure the downward compatibility of the CLI change. And there should not be any break in the existing cli. User should be able to use the existing config(previous config set) with the new cli structure.
+This section covers the addition/deletion/modification of CLI changes needed for the feature. If there is no change in CLI for HLD feature, it should be precisely mentioned in this section. This section should also ensure the downward compatibility of the CLI change. And there should not be any break in the existing cli. User should be able to use the existing config(previous config set) with the new cli structure.
 
 ### 7. Config DB Enhancements  
 
-This section covers the addition/deletion/modification of configuration changes needed for the feature. If there is no change in configuration for HLD feature, It should be implicitly mentioned in this section. This section should also ensure the downward compatibility for the change. And there should not be any break in the existing configuration structure. User should be able to use the existing config(previous config set) with the new configuration structure.
+This section covers the addition/deletion/modification of configuration changes needed for the feature. If there is no change in configuration for HLD feature, it should be precisely mentioned in this section. This section should also ensure the downward compatibility for the change. And there should not be any break in the existing configuration structure. User should be able to use the existing config(previous config set) with the new configuration structure.
 		
 ### 8. Restrictions  
 
