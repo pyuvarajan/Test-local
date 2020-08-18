@@ -6,7 +6,7 @@
 
 ### 2. Scope  
 
-This section describes the scope of this high-level design document in SONiC
+This section describes the scope of this high-level design document in SONiC.
 
 ### 3. Definitions/Abbreviations 
 
