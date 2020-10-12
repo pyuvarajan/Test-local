@@ -103,11 +103,13 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 |            |              |               | [Proxy ARP](https://github.com/Azure/SONiC/pull/579/files#diff-27f0a7d1396a80ae9bb361e779f14e8c) |
 |            |              |               | Pytest 100% moved from ansible to Pytest |
 |            |              |               | SPytest |
+|            |              |               | [System health and system LED](https://github.com/Azure/SONiC/blob/master/doc/system_health_monitoring/system-health-HLD.md) |
 |            |              |               | [Thermal control](https://github.com/Azure/SONiC/blob/master/thermal-control-design.md) |
 |SONiC.202012| 12/31/2020   |       TBD     | [Progress Tracking](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202012) |
 |            |              |               | [AAA improvement ](https://github.com/Azure/SONiC/blob/a46aa68b3a3ca57fea28c3d139fcef437e0cf0e6/doc/aaa/AAA20Improvements/AAA%20Improvements.md) |
-|            |              |               | ACL enhancements: Policing, DHCP/PCP remark, L2 |
+|            |              |               | ACL-based rate limiting, Mirroring, L2 |
 |            |              |               | [BFD SW 100ms interval from FRR](https://github.com/Azure/SONiC/pull/383/files#diff-93861062eace24add663831081adefc8) |
+|            |              |               | Config Replace |
 |            |              |               | Consistent ECMP support (fine grain ECMP) |
 |            |              |               | Console Support for SONiC (Hardware)|
 |            |              |               | Console Support for SONiC (SSH forwarding)|
@@ -123,6 +125,7 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 |            |              |               | Flow-based Services (incl. packet DSCP remark) |
 |            |              |               | [FRR BGP NBI](https://github.com/Azure/SONiC/blob/48e9012c548528b6528745bda9d75b4164e785eb/doc/mgmt/SONiC_Design_Doc_Unified_FRR_Mgmt_Interface.md) |
 |            |              |               | [Gearbox](https://github.com/Azure/SONiC/blob/master/doc/gearbox/gearbox_mgr_design.md) |
+|            |              |               | IP Helper |
 |            |              |               | [IPv6 Link Local and BGP Unnumbered](https://github.com/Azure/SONiC/blob/3d2e5e66e05bcce0a64f5ad077b96ae2006527fd/doc/ipv6/ipv6_link_local.md) |
 |            |              |               | [Kernel programming performance enhancement](https://github.com/Azure/SONiC/blob/f39c72147209aab8fec5deebb965bf4c91a1f876/doc/platform/nlapi/netlink_api_kernel_programming.md) |
 |            |              |               | Kubernetes (docker to be controlled by Kubernetes) |
@@ -135,7 +138,6 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 |            |              |               | [Media Enhancements (Media Information & Settings)](https://github.com/Azure/SONiC/blob/a6e9636552149829e39a82705d1ad2b48a17b3f0/doc/media-info-enhancements/media-info.md) |
 |            |              |               | Merge common lib for C++ and python (SWSS common lib)  |
 |            |              |               | Move from Python2->python3 |
-|            |              |               | [Multi-ASIC 202006](https://github.com/Azure/SONiC/blob/ebe4f4b695af5d2dbd23756d3cff03aef0a0c880/doc/multi_asic/SONiC_multi_asic_hld.md) |
 |            |              |               | Multi-DB enhancement-Part 2 |
 |            |              |               | ONIE FW tools |
 |            |              |               | [PDDF advance to SONiC Platform 2.0, BMC](https://github.com/Azure/SONiC/blob/master/doc/platform/brcm_pdk_pddf.md) |
@@ -145,8 +147,8 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 |            |              |               | SONiC app extension (w/o orchagent)|
 |            |              |               | SONiC new polling counters for counters which has extend CPU req.|
 |            |              |               | SONiC shared headroom - enhanced configuration |
+|            |              |               | Static Anycast Gateway |
 |            |              |               | Support hardware reboot/reload reason (Streaming Telemetry)|
-|            |              |               | [System health and system LED](https://github.com/Azure/SONiC/blob/master/doc/system_health_monitoring/system-health-HLD.md) |
 |            |              |               | Telemetry support for Multi-ASIC |
 |            |              |               | VoQ Chassis Support in SONiC |
 |            |              |               | VXLAN diff tool |
@@ -155,11 +157,11 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 | Backlog    |              |               |                          |
 |            |              |               | CLI framework|
 |            |              |               | L3 MLAG (Taken)          |
+|            |              |               | EVPN                     |
 |            |              |               | RDMA CLI enhancement     |
 |            |              |               | Virtual path for streaming telemetry (pushed off) |
+|            |              |               | Management VRF (pushed off)|
 | 			 | 				|		    	| Port and Vlan configuration and validation (TBD) |
-|            |              |               | IP Helper |
-|            |              |               | Static Anycast Gateway |
 | 			 | 				| 		  	    |  |
 |            |              |               | **Routing** |
 | 			 | 			    |   			  | VRF support: BFD                                             |
@@ -211,6 +213,7 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 | 			 | 				|			    | LinuxPTP |
 |  			 |				|			    |  |
 | 			 |				|			    | **Platform** |
+|            |              |               | [Multi-ASIC 202006](https://github.com/Azure/SONiC/blob/ebe4f4b695af5d2dbd23756d3cff03aef0a0c880/doc/multi_asic/SONiC_multi_asic_hld.md) |
 |  			 |				|			    | PDE enhancements<br/>(Platform 2.0, more tests) |
 |  			 |				| 		        |  |
 | 			 |				|			    | **Infrastructure** |
@@ -218,7 +221,6 @@ Pull requests for features that are not in the roadmap may not be accepted into 
 |  			 |				|			    | Kernel 4.9.189 |
 |  			 |				|			    | Erase System<br/>Configuration files |
 |  			 | 				|			    | Core File Manager | 
-|            |              |               | Config Replace |
 
 
 
